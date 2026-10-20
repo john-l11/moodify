@@ -1,27 +1,15 @@
 package com.example.moodify
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeContentPadding
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SegmentedButtonDefaults.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -30,13 +18,14 @@ import com.example.moodify.routes.FavoritesScreen
 import com.example.moodify.routes.HomeScreen
 import com.example.moodify.routes.PlaylistsScreen
 import com.example.moodify.routes.ProfileScreen
-import org.jetbrains.compose.resources.painterResource
 
-import moodify.shared.generated.resources.Res
-import moodify.shared.generated.resources.compose_multiplatform
-
+/**
+ * This is going to be the main routing function that will make the calls to
+ * the other composable functions. The other composable functions will be what
+ * renders the pages to the router host.
+ */
 @Composable
-@Preview
+//@Preview
 fun App() {
     MaterialTheme {
         val navController = rememberNavController()
