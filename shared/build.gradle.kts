@@ -55,6 +55,8 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation("io.github.hlcaptain:symbols-material-vectors-rounded:2.2.0")
+            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.10.0-rc01")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

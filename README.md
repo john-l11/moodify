@@ -1,3 +1,24 @@
+# This is Moodify, a vibes based playlist creator (Throwing 40k down the drain if you will)
+
+This application will require you to login to your spotify account however your credentials will be
+safe as it is going to use their oauth protocol to just grab the information from their systems.
+
+## How this application works
+It will take a look at your listening history and then based on the songs you've been jamming to
+it will use that information to generate a playlist. Once the playlist is generated it will look through
+all the songs that you already have saved, that is related to your mood, and then it will start to prompt
+you with new songs that you may potentially have interest in.
+
+## Pages
+- Home - This page will display the launching page as well as some statistics that will attempt to
+guess your current mood. It also will have the buttons to generate the playlists for you as well.
+- Playlists - This is where the generated playlists will display. If I find a way I may also allow
+the user to play music from this page as well
+- Profile - This is where all the statistics will display for the current logged in user.
+
+
+## These are just notes for me since this is my first ever kotlin application
+
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
 
 * [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
