@@ -53,7 +53,10 @@ fun HomeScreen() {
         )
         // This button will pull a new view that will pull the users listening
         // history
-        Button(onClick = {}) {
+        Button(
+            onClick = {},
+            modifier = Modifier.align(Alignment.End)
+        ) {
             Text("View All")
         }
         Row {
