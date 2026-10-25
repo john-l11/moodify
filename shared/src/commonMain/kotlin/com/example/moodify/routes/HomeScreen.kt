@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -17,8 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.moodify.Greeting
+import com.example.moodify.components.SimpleSelectBox
 import org.jetbrains.compose.resources.painterResource
 
 import moodify.shared.generated.resources.Res
@@ -31,6 +34,9 @@ import moodify.shared.generated.resources.compose_multiplatform
 @Composable
 fun HomeScreen() {
     var showContent by remember { mutableStateOf(false) }
+    val moods = listOf("Joyful", "Moody", "Cold", "Vibey")
+    var selectedMood by remember { mutableStateOf(moods.first()) }
+
     Column(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.primaryContainer)
@@ -71,13 +77,17 @@ fun HomeScreen() {
             color = Color.Black,
             text = "What music are you feeling?"
         )
-        // Implement Scrollable list here
-        // This button will make the api call to spotify to generate the playlist
-        // for the user based on the mood that they have selected in the scrollable
-        // list.
-        // potential features is adding a bias list for artists to make a good
-        // portion of the playlist feature selected artists.
-        Button(onClick = {}) {
+        SimpleSelectBox(
+            options = moods,
+            selectedOption = selectedMood,
+            onOptionSelected = {newValue ->
+                selectedMood = newValue
+            }
+        )
+        Button(onClick = {
+            // make a call to the api requesting a playlist to be created using
+            // the value that is selected in the list
+        }) {
             Text("Make Playlist!")
         }
         Button(onClick = { showContent = !showContent }) {
